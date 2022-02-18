@@ -1,4 +1,4 @@
-# MongoDB-Nodejs-Express
+# MongoDB-Nodejs-Express-Ejs
 MongoDB ile verileri(kullanıcı,içerik) tuttuğum, Nodejs Express kullanarak oluşturduğum bir web uygulaması.
 
 Node.js
