@@ -9,15 +9,18 @@
           <li class="breadcrumb-item">
             <a href="/about">Hakkımızda</a>
           </li>
+          <% if(user) { %>
+          <li class="breadcrumb-item">
+            <a href="/logout">Çıkış Yap</a>
+          </li>
+          <% }else { %>
           <li class="breadcrumb-item">
             <a href="/login">Giriş Yap</a>
           </li>
           <li class="breadcrumb-item">
             <a href="/signup">Üye Ol</a>
           </li>
-          <li class="breadcrumb-item">
-            <a href="/logout">Çıkış Yap</a>
-          </li>
+          <% } %>
         </ol>
       </nav>
     </div>

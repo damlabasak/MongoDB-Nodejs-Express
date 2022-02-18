@@ -1,6 +1,10 @@
 const express = require('express')
 const mongoose = require('mongoose')
-const Blog = require('./models/blogs')
+const cookieParser = require('cookie-parser')
+const adminRoutes = require('./routes/adminRoutes')
+const blogRoutes = require('./routes/blogRoutes')
+const authRoutes = require('./routes/authRoutes')
+const {requireAuth, checkUser} = require('./middlewares/authMiddleware')
 
 const app = express()
 
@@ -12,6 +16,8 @@ mongoose.connect(dbURL, {useNewUrlParser: true, useUnifiedTopology: true})
 app.set('view engine','ejs')
 
 app.use(express.static('public'))
+app.use(express.urlencoded({ extended: true})) //içiçe nesne gönderebilmek için, true
+app.use(cookieParser())
 
 /* app.get('/add',(req,res) => { //db'e manuel veri ekleme
     const blog = new Blog({
@@ -39,26 +45,14 @@ app.get('/all',(req,res) => { //eklenen tüm yazıları json formatta görmek i�
         })
 })
  */
-app.get('/',(req,res) => {
-    Blog.find().sort({ createdAt: -1}) //son kayıt başta gösterilir
-        .then((result) => {
-            res.render('index',{title:'Anasayfa',blogs: result})
-        })
-        .catch((err) => {
-            console.log(err)
-        })
+app.get('*',checkUser) // checkUser tüm istekler üzerinde çalışsın
+app.get('/',(req,res) => { //anasayfayı blog sayfasına yönlendirme
+    res.redirect('/blog')
 })
 
-app.get('/blog/:id',(req,res) => { // :'dan sonra bir değişken belirtilir
-    const id = req.params.id
-    Blog.findById(id)
-        .then((result) => {
-            res.render('blog',{blog: result, title:'Detay'})
-        })
-        .catch((err) => {
-            res.status(404).render('404',{title:'404'})
-        })
-})
+app.use('/',authRoutes)
+app.use('/admin',requireAuth,adminRoutes)
+app.use('/blog',blogRoutes)
 
 app.get('/about',(req,res) => {
     res.render('about',{title:'Hakkımızda'})
@@ -66,10 +60,6 @@ app.get('/about',(req,res) => {
 
 app.get('/about-us',(req,res) => {
     res.redirect('/about')
-})
-
-app.get('/login',(req,res) => {
-    res.render('login',{title:'Giriş Yap'})
 })
 
 app.use((req,res) => {
