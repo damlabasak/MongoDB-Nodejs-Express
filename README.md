@@ -10,6 +10,10 @@ https://www.npmjs.com
 MongoDB 
 https://www.mongodb.com/cloud/atlas
 
+| npm init -y
+
+| npm install express
+
 | npm install nodemon
 
 | npm i --save lodash
@@ -21,3 +25,5 @@ https://www.mongodb.com/cloud/atlas
 | npm install bcrypt
 
 | npm install cookie-parser
+
+| npm install mongoose
