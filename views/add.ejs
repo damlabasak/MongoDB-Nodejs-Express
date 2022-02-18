@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <%-include('./inc/head')%>
+</head>
+<body>
+    <%-include('./inc/nav')%>
+    <section>
+        <div class="container">
+            <div class="row">
+                <div class="span12">
+                    <form class="form-horizontal" action="/admin/add" method="POST">
+                      <fieldset>
+                        <div id="legend">
+                          <legend class="">Yeni Yazı Ekle</legend>
+                        </div>
+                        <div class="control-group">
+                          <label class="control-label">Başlık</label>
+                          <div class="controls">
+                            <input type="text" name="title" class="input-xlarge">
+                          </div>
+                        </div>
+                        <div class="control-group">
+                          <label class="control-label">Açıklama</label>
+                          <div class="controls">
+                            <input type="text" name="short" class="input-xlarge">
+                          </div>
+                          <label class="control-label">İçerik</label>
+                          <div class="controls">
+                            <input type="text" name="long" class="input-xlarge">
+                          </div>
+                        </div>
+                        <br>
+                        <div class="control-group">
+                          <!-- Button -->
+                          <div class="controls">
+                            <button class="btn btn-dark">EKLE</button>
+                          </div>
+                        </div>
+                      </fieldset>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+</body>
+</html>
