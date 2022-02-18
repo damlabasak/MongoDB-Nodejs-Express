@@ -1,0 +1,19 @@
+body {
+    padding-left: 30px;
+    padding-right: 30px;
+}
+
+.navbar .container-fluid {
+    justify-content: center !important;
+}
+
+section {
+    margin: 50px 20% 0px 20%;
+    padding: 40px 20px;
+    border-radius: 10px;
+    background-color:darkseagreen;
+}
+
+section .container .row {
+    justify-content: center !important;
+}

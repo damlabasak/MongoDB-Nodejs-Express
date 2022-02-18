@@ -1,0 +1,29 @@
+{
+  "name": "MongoDB-Nodejs-Express-2",
+  "version": "1.0.0",
+  "description": "MongoDB ile verileri(kullanıcı,içerik) tuttuğum, Nodejs Express kullanarak oluşturduğum bir web uygulaması.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/damlabkocak/MongoDB-Nodejs-Express.git"
+  },
+  "keywords": [],
+  "author": "Damla Başak Koçak",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/damlabkocak/MongoDB-Nodejs-Express/issues"
+  },
+  "homepage": "https://github.com/damlabkocak/MongoDB-Nodejs-Express#readme",
+  "dependencies": {
+    "bcrypt": "^5.0.1",
+    "cookie-parser": "^1.4.6",
+    "ejs": "^3.1.6",
+    "express": "^4.17.3",
+    "jsonwebtoken": "^8.5.1",
+    "lodash": "^4.17.21",
+    "mongoose": "^6.2.2"
+  }
+}
