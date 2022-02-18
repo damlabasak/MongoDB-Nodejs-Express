@@ -1,6 +1,8 @@
 # MongoDB-Nodejs-Express-Ejs
 MongoDB ile verileri(kullanıcı,içerik) tuttuğum, Nodejs Express kullanarak oluşturduğum bir web uygulaması.
 
+run on this http://localhost:27017/
+
 Node.js
 https://nodejs.org/tr/
 
